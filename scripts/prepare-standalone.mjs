@@ -12,4 +12,4 @@ for (const path of ['index.html', 'en/index.html']) {
   await writeFile(new URL(`../${path}`, import.meta.url), standalone);
 }
 
-console.log('Prepared isolated root-domain HTML for PT Amarta Prima Persada.');
+console.log('Prepared isolated root-domain HTML for Asa Nirwana Selaras.');

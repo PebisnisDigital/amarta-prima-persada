@@ -1,14 +1,16 @@
-# PT Amarta Prima Persada — Official Website
+# Asa Nirwana Selaras — Rental Mobil
 
-Standalone static website for PT Amarta Prima Persada, separated from the PESONAFLIX multi-client site with the owner's authorization.
+Standalone static website for **Koperasi Jasa Asa Nirwana Selaras**, with the public-facing brand **Asa Nirwana Selaras**. This is a rebrand of the standalone car-rental website, separate from PESONAFLIX.
 
 ## Publishing
 
-- Import this repository into a **new** Vercel project named `amarta-prima-persada`.
-- Select **Other** for the framework preset. This is a static site; no build command or `npm install` is needed.
+- The current Vercel project and legacy URL remain `amarta-prima-persada` until a new domain is selected. Keeping this URL ensures existing links continue working during the rebrand.
+- Framework preset **Other**. This is a static site; no build command or `npm install` is needed.
 - Root Directory: repository root (`.`).
 - The main page is `/`, with an English page at `/en`.
 - Both languages use WhatsApp `+62 852-2200-5585` (`wa.me/628522005585`).
+- New monogram artwork is a temporary ANS logo in `images/logo-asa-nirwana-selaras.svg` / `.webp`, pending the cooperative's official logo.
+- The previous entity's email, contact person, and street address were removed pending verification for the cooperative. Provide approved contact information before adding it again.
 - Images and vendored animation scripts are in `images/` and `vendor/`.
 - Fleet categories: Toyota 7-seater, Daihatsu 7-seater, and Hiace / Elf Long.
 - Five services: daily/monthly/yearly self-drive rental; rental with driver; monthly driver and fuel package; employee shuttle; and group tourism trips.

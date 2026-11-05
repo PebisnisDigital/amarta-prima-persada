@@ -19,8 +19,13 @@ for (const file of files) {
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
-    ['local image asset', content.includes('/images/logo_amarta.webp')],
+    ['local branded logo asset', content.includes('/images/logo-asa-nirwana-selaras.webp')],
     ['proper standalone canonical', content.includes('https://amarta-prima-persada.vercel.app')],
+    ['public-facing site name', content.includes('Asa Nirwana Selaras')],
+    ['new cooperative legal name', content.includes('Koperasi Jasa Asa Nirwana Selaras')],
+    ['no old company branding', !content.includes('PT Amarta Prima Persada') && !content.includes('logo_amarta.webp')],
+    ['no inherited old company contact details', !content.includes('amartaprimapersada.com') && !content.includes('Skyline Building')],
+    ['new WhatsApp greeting', !content.includes('Halo%20APP') && !content.includes('Hi%20APP')],
     ['3 fleet categories', fleetNames.every((name) => content.includes(`<h3>${name}</h3>`))],
     ['5 transportation services', serviceNames.every((name) => content.includes(`<h3>${name}</h3>`))],
     ['no outdated Grab/Gojek offer', !/\bGrab\b|\bGojek\b|minimum 1 year|minimum 1 tahun/i.test(content)],
@@ -33,6 +38,12 @@ for (const file of files) {
   const structuredDataMatch = content.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   if (!structuredDataMatch) throw new Error(`${file}: no JSON-LD data`);
   const structuredData = JSON.parse(structuredDataMatch[1]);
+  const organization = structuredData['@graph'].find((entity) => Array.isArray(entity['@type']) && entity['@type'].includes('AutomotiveBusiness'));
+  const website = structuredData['@graph'].find((entity) => entity['@type'] === 'WebSite');
+  if (organization?.name !== 'Koperasi Jasa Asa Nirwana Selaras' || website?.name !== 'Asa Nirwana Selaras') {
+    throw new Error(`${file}: organization and website name mismatch`);
+  }
+  checks += 1;
   const services = structuredData['@graph'].filter((entity) => entity['@type'] === 'Service');
   const faq = structuredData['@graph'].find((entity) => entity['@type'] === 'FAQPage');
   if (services.length !== 5) throw new Error(`${file}: expected 5 services in JSON-LD, got ${services.length}`);
@@ -45,11 +56,17 @@ for (const file of files) {
   checks += 1;
 }
 
-for (const name of imageNames) {
+for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
   const data = await readFile(new URL(`../images/${name}`, import.meta.url));
   if (data.toString('ascii', 8, 12) !== 'WEBP') throw new Error(`Invalid WebP: ${name}`);
   checks += 1;
 }
+
+const favicon = await readFile(new URL('../images/apple-touch-icon.png', import.meta.url));
+if (favicon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid ANS Apple touch icon');
+const logoSvg = await readFile(new URL('../images/logo-asa-nirwana-selaras.svg', import.meta.url), 'utf8');
+if (!logoSvg.includes('Asa Nirwana Selaras')) throw new Error('Invalid ANS vector logo');
+checks += 2;
 
 for (const name of ['gsap.min.js', 'ScrollTrigger.min.js', 'swiper-bundle.min.js', 'aos.js']) {
   const file = new URL(`../vendor/${name}`, import.meta.url);

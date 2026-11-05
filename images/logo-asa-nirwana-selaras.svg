@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Asa Nirwana Selaras</title>
+  <desc id="desc">Monogram ANS dengan simbol jalan dan lingkaran emas.</desc>
+  <defs>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#274c70"/>
+      <stop offset="1" stop-color="#0c233a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9ca65"/>
+      <stop offset="1" stop-color="#ed9e0b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="120" r="114" fill="url(#navy)"/>
+  <circle cx="120" cy="120" r="103" fill="none" stroke="url(#gold)" stroke-width="7"/>
+  <path d="M51 172c43-23 94-23 138 0" fill="none" stroke="#58abc9" stroke-width="11" stroke-linecap="round"/>
+  <path d="M103 171l8-24h18l8 24" fill="none" stroke="#f8f3e6" stroke-width="5" stroke-linecap="round"/>
+  <text x="120" y="134" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="65" font-weight="800" letter-spacing="-4" text-anchor="middle">ANS</text>
+</svg>
