@@ -23,7 +23,8 @@ for (const file of files) {
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
     ['Karansa symbol in navigation and body', (content.match(/src="\/images\/karansa-symbol\.webp"/g) || []).length === 4],
-    ['transparent WebP favicon and Apple touch icon', content.includes('rel="icon" type="image/webp" href="/images/karansa-symbol.webp"') && content.includes('rel="apple-touch-icon" href="/images/karansa-touch-icon.png"')],
+    ['symbol-only ICO and cache-busted favicon', content.includes('rel="icon" type="image/x-icon" href="/favicon.ico?v=2"') && content.includes('rel="icon" type="image/png" sizes="64x64" href="/images/karansa-favicon.png?v=2"')],
+    ['updated Apple touch icon', content.includes('rel="apple-touch-icon" sizes="180x180" href="/images/karansa-touch-icon.png?v=2"')],
     ['no old logo references', !content.includes('/images/logo-karansa-solution.png') && !content.includes('/images/icon-kjans-official.svg') && !content.includes('/images/logo-kjans-official.svg')],
     ['official cooperative acronym', content.includes('KJANS') && !/\bANS\b/.test(content)],
     ['proper standalone canonical', content.includes('https://amarta-prima-persada.vercel.app')],
@@ -85,7 +86,11 @@ if (karansaSymbol.toString('ascii', 8, 12) !== 'WEBP') throw new Error('Invalid 
 if (karansaSymbol.length >= 50 * 1024) throw new Error('Karansa symbol exceeds 50 KB');
 const karansaTouchIcon = await readFile(new URL('../images/karansa-touch-icon.png', import.meta.url));
 if (karansaTouchIcon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid Karansa touch icon');
-checks += 3;
+const karansaFavicon = await readFile(new URL('../images/karansa-favicon.png', import.meta.url));
+if (karansaFavicon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid Karansa PNG favicon');
+const ico = await readFile(new URL('../favicon.ico', import.meta.url));
+if (ico.toString('hex', 0, 4) !== '00000100') throw new Error('Invalid Karansa ICO favicon');
+checks += 5;
 
 for (const name of ['gsap.min.js', 'ScrollTrigger.min.js', 'swiper-bundle.min.js', 'aos.js']) {
   const file = new URL(`../vendor/${name}`, import.meta.url);
