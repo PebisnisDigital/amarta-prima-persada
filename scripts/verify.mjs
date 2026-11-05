@@ -22,8 +22,9 @@ for (const file of files) {
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
-    ['official logo in navigation', content.includes('/images/icon-kjans-official.svg')],
-    ['official horizontal logo', content.includes('/images/logo-kjans-official.svg')],
+    ['Karansa logo in navigation and body', (content.match(/src="\/images\/logo-karansa-solution\.png"/g) || []).length === 4],
+    ['Karansa favicon and Apple touch icon', content.includes('rel="icon" type="image/png" href="/images/logo-karansa-solution.png"') && content.includes('rel="apple-touch-icon" href="/images/logo-karansa-solution.png"')],
+    ['no old logo references', !content.includes('/images/icon-kjans-official.svg') && !content.includes('/images/logo-kjans-official.svg')],
     ['official cooperative acronym', content.includes('KJANS') && !/\bANS\b/.test(content)],
     ['proper standalone canonical', content.includes('https://amarta-prima-persada.vercel.app')],
     ['public-facing site name', content.includes('Asa Nirwana Selaras')],
@@ -79,14 +80,10 @@ for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
   checks += 1;
 }
 
-const favicon = await readFile(new URL('../images/apple-touch-icon.png', import.meta.url));
-if (favicon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid KJANS Apple touch icon');
-for (const logo of ['icon-kjans-official.svg', 'logo-kjans-official.svg']) {
-  const svg = await readFile(new URL(`../images/${logo}`, import.meta.url), 'utf8');
-  if (!svg.includes('Koperasi') && !svg.includes('KJANS')) throw new Error(`Invalid official logo: ${logo}`);
-  checks += 1;
-}
-checks += 1;
+const karansaLogo = await readFile(new URL('../images/logo-karansa-solution.png', import.meta.url));
+if (karansaLogo.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid Karansa Solution logo/favicon');
+if (karansaLogo.length < 10000) throw new Error('Karansa Solution logo asset is unexpectedly small');
+checks += 2;
 
 for (const name of ['gsap.min.js', 'ScrollTrigger.min.js', 'swiper-bundle.min.js', 'aos.js']) {
   const file = new URL(`../vendor/${name}`, import.meta.url);
