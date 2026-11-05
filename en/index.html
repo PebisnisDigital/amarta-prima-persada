@@ -8,8 +8,8 @@
   <meta name="googlebot" content="index, follow" />
   <meta name="author" content="Koperasi Jasa Asa Nirwana Selaras" />
   <meta name="keywords" content="Jakarta car rental, Toyota 7 seater rental, Daihatsu 7 seater rental, Hiace rental, Elf Long rental, daily rental, monthly rental, annual rental, self drive car rental, car with driver, driver and fuel package, employee shuttle, group tourism trips, corporate car rental, Koperasi Jasa Asa Nirwana Selaras" />
-  <meta name="description" content="Toyota &amp; Daihatsu 7-seater, Hiace / Elf Long rentals in Jakarta. Daily, monthly, yearly, self-drive, with driver, driver &amp; fuel packages, employee shuttles, and open group tourism trips." />
-  <meta name="geo.region" content="ID-JK" />
+  <meta name="description" content="Koperasi Jasa Asa Nirwana Selaras (KJANS): Toyota, Daihatsu, Hiace / Elf Long rentals across Greater Jakarta and vehicle partnerships including Car Management, New Unit Leasing, and Lease-to-Own." />
+  <meta name="geo.region" content="ID-JB" />
   <link rel="canonical" href="https://amarta-prima-persada.vercel.app/en/" />
   <link rel="alternate" hreflang="id" href="https://amarta-prima-persada.vercel.app/" />
   <link rel="alternate" hreflang="en" href="https://amarta-prima-persada.vercel.app/en/" />
@@ -34,7 +34,7 @@
   <meta name="twitter:image" content="https://amarta-prima-persada.vercel.app/images/og-cover.webp" />
   <meta name="twitter:image:alt" content="Corporate Car Rental Jakarta - Koperasi Jasa Asa Nirwana Selaras" />
 
-  <link rel="icon" type="image/webp" href="/images/logo-asa-nirwana-selaras.webp" />
+  <link rel="icon" type="image/svg+xml" href="/images/icon-kjans-official.svg" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,10 +50,10 @@
         "@type": ["AutomotiveBusiness", "LocalBusiness"],
         "@id": "https://amarta-prima-persada.vercel.app/#organization",
         "name": "Koperasi Jasa Asa Nirwana Selaras",
-        "alternateName": "ANS",
+        "alternateName": "KJANS",
         "description": "Toyota and Daihatsu 7-seater, Hiace / Elf Long rentals in Jakarta. Daily, monthly, yearly, self-drive, with a driver, driver and fuel packages, employee shuttles, and tourism trips.",
         "url": "https://amarta-prima-persada.vercel.app/en/",
-        "logo": "https://amarta-prima-persada.vercel.app/images/logo-asa-nirwana-selaras.webp",
+        "logo": "https://amarta-prima-persada.vercel.app/images/logo-kjans-official.svg",
         "image": "https://amarta-prima-persada.vercel.app/images/og-cover.webp",
         "telephone": "+62-852-2200-5585",
         "priceRange": "$$",
@@ -86,13 +86,16 @@
         "name": "Koperasi Jasa Asa Nirwana Selaras",
         "legalName": "Koperasi Jasa Asa Nirwana Selaras",
         "url": "https://amarta-prima-persada.vercel.app/en/",
-        "logo": "https://amarta-prima-persada.vercel.app/images/logo-asa-nirwana-selaras.webp",
+        "logo": "https://amarta-prima-persada.vercel.app/images/logo-kjans-official.svg",
+        "email": "asanirwanaselaras@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "East Bekasi", "addressRegion": "West Java", "addressCountry": "ID" },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+62-852-2200-5585",
           "contactType": "sales",
           "areaServed": "ID"
-        }
+        },
+        "department": { "@type": "Organization", "name": "KJANS Partnerships", "email": "asanirwanaselaras@gmail.com", "telephone": "+62-815-184-0631" }
       },
       {
         "@type": "WebSite",
@@ -150,7 +153,7 @@
             "name": "Are daily, monthly, and annual rental options available?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. ANS provides daily, monthly, and annual rentals. Self-drive options are subject to eligibility and vehicle availability."
+              "text": "Yes. KJANS provides daily, monthly, and annual rentals. Self-drive options are subject to eligibility and vehicle availability."
             }
           },
           {
@@ -1211,6 +1214,27 @@
       box-shadow: inset 0 0 0 3px var(--sky);
     }
 
+    /* PARTNERSHIP - built from the same rental card design system */
+    .partnership { background: var(--gray-50); }
+    .partnership-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .partnership .scheme-card { padding: 32px 26px; }
+    .partnership .scheme-card:last-child { grid-column: auto; }
+    .partnership .scheme-card h3 { font-size: 21px; }
+    .partnership .scheme-card .scheme-icon { margin-bottom: 18px; }
+    .partnership .scheme-card ul { margin-bottom: 20px; }
+    .partnership-note { margin: 24px auto 0; max-width: 810px; text-align: center; color: var(--gray-500); font-size: 13px; }
+    .partnership-process { margin-top: 65px; }
+    .partnership-process h3 { text-align: center; font-size: 28px; margin-bottom: 26px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .process-step { padding: 24px; border-radius: 16px; background: #fff; border: 1px solid var(--gray-100); }
+    .process-step .step-number { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 12px; color: var(--navy-dark); background: var(--gold-soft); font-weight: 800; margin-bottom: 14px; }
+    .process-step h4 { color: var(--navy); font-size: 17px; margin-bottom: 8px; }
+    .process-step p { color: var(--gray-500); font-size: 14px; }
+    .cooperative-values { margin-top: 48px; display: grid; grid-template-columns: 260px 1fr; align-items: center; gap: 28px; padding: 28px 34px; background: #fff; border: 1px solid var(--gray-100); border-radius: 20px; }
+    .cooperative-values img { width: 260px; height: auto; }
+    .cooperative-values h3 { font-size: 21px; margin-bottom: 8px; }
+    .cooperative-values p { color: var(--gray-500); font-size: 14.5px; }
+
     /* WHY */
     .why {
       background: var(--gray-50)
@@ -1435,7 +1459,8 @@
     }
 
     .contact-info span {
-      color: rgba(255, 255, 255, .9)
+      color: rgba(255, 255, 255, .9);
+      overflow-wrap: anywhere;
     }
 
     .contact-form {
@@ -1785,6 +1810,9 @@
 
       .scheme-card:last-child { grid-column: auto; }
 
+      .partnership-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px
@@ -1822,6 +1850,10 @@
 
       .fleet-category-grid { grid-template-columns: 1fr; }
 
+      .process-grid, .cooperative-values { grid-template-columns: 1fr; }
+      .cooperative-values { padding: 24px; }
+      .cooperative-values img { width: min(260px, 100%); }
+
       .brand-text {
         display: none
       }
@@ -1846,7 +1878,7 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner container">
       <a href="/" class="brand">
-        <img src="/images/logo-asa-nirwana-selaras.webp" alt="Koperasi Jasa Asa Nirwana Selaras Logo - Corporate Car Rental Jakarta" width="56" height="56" />
+        <img src="/images/icon-kjans-official.svg" alt="Official KJANS logo" width="56" height="56" />
         <div class="brand-text">
           <span class="brand-name">Asa Nirwana Selaras</span>
           <span class="brand-tag">Transportation Service Cooperative</span>
@@ -1856,6 +1888,7 @@
         <a href="#about">About</a>
         <a href="#fleet">Fleet</a>
         <a href="#schemes">Services</a>
+        <a href="#partnership">Partnerships</a>
         <a href="#faq">FAQ</a>
         <a href="#contact" class="nav-cta">Contact</a>
         <div class="lang-switch" aria-label="Language">
@@ -1930,7 +1963,7 @@
             <div class="spec"><span>Bahan Bakar</span><strong id="carFuel">Bensin</strong></div>
             <div class="spec"><span>Transmisi</span><strong id="carTrans">Manual / Matic</strong></div>
           </div>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20consult%20about%20fleet%20rental" class="btn-primary" id="heroCta">
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20consult%20about%20fleet%20rental" class="btn-primary" id="heroCta">
             <span>Consult Now</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
@@ -1962,18 +1995,20 @@
       <div class="about-text" data-aos="fade-right">
         <span class="section-eyebrow">About Us</span>
         <h2>Your Trusted Transportation Partner for Business in Jakarta</h2>
-        <p>Koperasi Jasa Asa Nirwana Selaras (ANS) provides <strong>daily, monthly, and yearly car rentals</strong> for personal travel, business operations, and groups. Our vehicle categories include <strong>Toyota 7-seaters, Daihatsu 7-seaters, and Hiace / Elf Long</strong>, with self-drive and chauffeur options.</p>
+        <p><strong>Koperasi Jasa Asa Nirwana Selaras (KJANS)</strong> is a transportation service cooperative adapting to modern mobility technology. We combine professional transport services and fleet partnerships with principles of independence, transparency, and cooperation.</p>
+        <p>We provide <strong>daily, monthly, and yearly car rentals</strong> for personal travel, business operations, and groups. Our vehicle categories include <strong>Toyota 7-seaters, Daihatsu 7-seaters, and Hiace / Elf Long</strong>, with self-drive and chauffeur options.</p>
         <p>We serve the <strong>Greater Jakarta area</strong> (Jakarta, Tangerang, Bekasi, Depok, and Bogor). With a well-maintained fleet and flexible transportation services, we help businesses and individuals arrange their journeys with ease.</p>
         <div class="about-badges">
           <span>Service Cooperative</span>
           <span>Well-Maintained Fleet</span>
           <span>24-Hour Service</span>
           <span>Greater Jakarta Area</span>
+          <span>Based in East Bekasi</span>
         </div>
       </div>
       <div class="about-visual" data-aos="fade-left">
         <div class="orbit">
-          <div class="orbit-core"><img src="/images/logo-asa-nirwana-selaras.webp" alt="Koperasi Jasa Asa Nirwana Selaras Logo - Corporate Car Rental Service" width="90" height="90" loading="lazy" /></div>
+          <div class="orbit-core"><img src="/images/icon-kjans-official.svg" alt="Official KJANS symbol" width="90" height="90" loading="lazy" /></div>
           <div class="orbit-ring ring-1"><span></span></div>
           <div class="orbit-ring ring-2"><span></span></div>
           <div class="orbit-ring ring-3"><span></span></div>
@@ -1995,21 +2030,21 @@
           <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16V9l2-4h12l2 4v7M4 13h16M6 16v2m12-2v2M7 10h.01M17 10h.01"/><path d="M7 5l-2 6m12-6 2 6"/></svg>
           <h3>Toyota 7 Seater</h3>
           <p>MPVs for family trips, business operations, and corporate travel.</p>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%207-seater%20rental" target="_blank" rel="noopener">Ask About Fleet &rarr;</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%207-seater%20rental" target="_blank" rel="noopener">Ask About Fleet &rarr;</a>
         </article>
         <article class="fleet-category-card" data-aos="fade-up" data-aos-delay="80">
           <span class="category-number">02 / 7 SEATER</span>
           <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16V9l2-4h12l2 4v7M4 13h16M6 16v2m12-2v2M7 10h.01M17 10h.01"/><path d="M7 5l-2 6m12-6 2 6"/></svg>
           <h3>Daihatsu 7 Seater</h3>
           <p>Seven-passenger options for rentals ranging from daily to yearly.</p>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Daihatsu%207-seater%20rental" target="_blank" rel="noopener">Ask About Fleet &rarr;</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Daihatsu%207-seater%20rental" target="_blank" rel="noopener">Ask About Fleet &rarr;</a>
         </article>
         <article class="fleet-category-card" data-aos="fade-up" data-aos-delay="160">
           <span class="category-number">03 / GROUP TRAVEL</span>
           <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M5 9h14M7 9v5m5-5v5m5-5v5M6 18v2m12-2v2"/></svg>
           <h3>Hiace / Elf Long</h3>
           <p>Group transport for company events, shuttles, and tourism.</p>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Hiace%20or%20Elf%20Long%20rental" target="_blank" rel="noopener">Ask About Fleet &rarr;</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Hiace%20or%20Elf%20Long%20rental" target="_blank" rel="noopener">Ask About Fleet &rarr;</a>
         </article>
       </div>
       <h3 class="fleet-subtitle">Toyota 7-Seater Vehicle Examples</h3>
@@ -2026,7 +2061,7 @@
               <span>Gasoline</span><span>&middot;</span>
               <span>Manual / Automatic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%20Avanza%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
+            <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%20Avanza%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="80">
@@ -2041,7 +2076,7 @@
               <span>Gasoline</span><span>&middot;</span>
               <span>CVT Automatic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%20Veloz%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
+            <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%20Veloz%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="160">
@@ -2056,7 +2091,7 @@
               <span>Gasoline</span><span>&middot;</span>
               <span>Manual / Automatic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%20Innova%20Reborn%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
+            <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Toyota%20Innova%20Reborn%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="240">
@@ -2071,7 +2106,7 @@
               <span>2.4 Diesel</span><span>&middot;</span>
               <span>Automatic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Innova%20Reborn%202.4%20Diesel%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
+            <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Innova%20Reborn%202.4%20Diesel%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="320">
@@ -2086,7 +2121,7 @@
               <span>2.0 Hybrid</span><span>&middot;</span>
               <span>e-CVT</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Innova%20Zenix%20G%202.0%20Hybrid%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
+            <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Innova%20Zenix%20G%202.0%20Hybrid%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="400">
@@ -2101,7 +2136,7 @@
               <span>2.0 Hybrid</span><span>&middot;</span>
               <span>e-CVT</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20Innova%20Zenix%20Q%202.0%20Hybrid%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
+            <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20Innova%20Zenix%20Q%202.0%20Hybrid%20price" target="_blank" rel="noopener" class="btn-outline">Ask for Price</a>
           </div>
         </div>
       </div>
@@ -2112,7 +2147,7 @@
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <span class="section-eyebrow">Our Services</span>
-        <h2>5 Transportation Services from ANS</h2>
+        <h2>5 Transportation Services from KJANS</h2>
         <p>Choose the right option for your journey, daily operations, or travel plans.</p>
       </div>
       <div class="scheme-grid">
@@ -2127,7 +2162,7 @@
             <li>Monthly rentals for regular needs</li>
             <li>Yearly rentals for ongoing operations</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20please%20share%20daily%2Fmonthly%2Fyearly%20rental%20and%20self-drive%20options" target="_blank" rel="noopener" class="btn-outline">Request a Quote</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20please%20share%20daily%2Fmonthly%2Fyearly%20rental%20and%20self-drive%20options" target="_blank" rel="noopener" class="btn-outline">Request a Quote</a>
         </div>
         <div class="scheme-card featured" data-aos="fade-up" data-aos-delay="100">
           <span class="badge">Popular</span>
@@ -2141,7 +2176,7 @@
             <li>Driver included in the service</li>
             <li>Vehicle options to suit your needs</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20car%20rental%20with%20driver" target="_blank" rel="noopener" class="btn-outline">Ask About Service</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20car%20rental%20with%20driver" target="_blank" rel="noopener" class="btn-outline">Ask About Service</a>
         </div>
         <div class="scheme-card" data-aos="fade-up" data-aos-delay="160">
           <div class="scheme-icon">
@@ -2154,7 +2189,7 @@
             <li>Driver included</li>
             <li>Fuel included under agreed terms</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20please%20quote%20monthly%20car%20rental%20with%20driver%20and%20fuel" target="_blank" rel="noopener" class="btn-outline">Request a Quote</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20please%20quote%20monthly%20car%20rental%20with%20driver%20and%20fuel" target="_blank" rel="noopener" class="btn-outline">Request a Quote</a>
         </div>
         <div class="scheme-card" data-aos="fade-up" data-aos-delay="240">
           <div class="scheme-icon">
@@ -2167,7 +2202,7 @@
             <li>For company transportation needs</li>
             <li>Fleet matched to passenger count</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20employee%20shuttle%20services" target="_blank" rel="noopener" class="btn-outline">Plan a Shuttle</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20employee%20shuttle%20services" target="_blank" rel="noopener" class="btn-outline">Plan a Shuttle</a>
         </div>
         <div class="scheme-card" data-aos="fade-up" data-aos-delay="320">
           <div class="scheme-icon">
@@ -2180,7 +2215,72 @@
             <li>Seven-seaters and group vehicle options</li>
             <li>Consultation on trip planning</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20ask%20about%20open%20group%20tourism%20trips" target="_blank" rel="noopener" class="btn-outline">Explore Trips</a>
+          <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20ask%20about%20open%20group%20tourism%20trips" target="_blank" rel="noopener" class="btn-outline">Explore Trips</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partnership section" id="partnership">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="section-eyebrow">KJANS Partnership Programs</span>
+        <h2>Put Your Vehicle to Work</h2>
+        <p>Beyond car rentals, KJANS offers fleet-management partnerships for vehicle owners, new-unit partners, and professional drivers. Each program is subject to eligibility and an agreed contract.</p>
+      </div>
+      <div class="partnership-grid">
+        <article class="scheme-card" data-aos="fade-up">
+          <div class="scheme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15V9l2-4h12l2 4v6M4 12h16M6 15v2m12-2v2M8 9h8"/><path d="m8 20 2 2 5-5"/></svg></div>
+          <h3>Car Management (Titip Mobil)</h3>
+          <p>Own an underused car? KJANS proposes managing eligible vehicles with verified drivers and sharing operating results according to the partnership agreement.</p>
+          <ul>
+            <li>Suggested models include Sigra, Xenia, Avanza, Veloz, and Innova</li>
+            <li>Criteria include a vehicle age of up to 2 years and mileage below 100,000 km</li>
+            <li>GPS monitoring, insurance, and periodic reports under program terms</li>
+          </ul>
+          <a href="mailto:asanirwanaselaras@gmail.com?subject=Car%20Management%20Partnership%20Inquiry" class="btn-outline">Ask About Partnership</a>
+        </article>
+        <article class="scheme-card featured" data-aos="fade-up" data-aos-delay="100">
+          <span class="badge">New Vehicles</span>
+          <div class="scheme-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h18M5 17l2-8h10l2 8M7 9l2-4h6l2 4M7 17v2m10-2v2"/><path d="M8 13h2m4 0h2"/></svg></div>
+          <h3>New Unit Leasing (Sewa Murni)</h3>
+          <p>A new-vehicle sourcing program through official dealer networks, including assistance with application and fleet management subject to approval.</p>
+          <ul>
+            <li>Standard: Daihatsu Sigra / Toyota Calya</li>
+            <li>Regular: Daihatsu Xenia / Toyota Avanza</li>
+            <li>Down payment, financing, and contract terms must be confirmed in advance</li>
+          </ul>
+          <a href="mailto:asanirwanaselaras@gmail.com?subject=New%20Unit%20Leasing%20Inquiry" class="btn-outline">Discuss the Program</a>
+        </article>
+        <article class="scheme-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="scheme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12 12 3l9 9-9 9-9-9Z"/><circle cx="12" cy="12" r="3"/><path d="M15 6h4"/></svg></div>
+          <h3>Lease-to-Own (Sewa Kepemilikan)</h3>
+          <p>A long-term program for eligible partner drivers, with the possibility of ownership once the contract and applicable buyout obligations have been fulfilled.</p>
+          <ul>
+            <li>Designed for drivers who meet cooperative eligibility criteria</li>
+            <li>New vehicles in Standard and Regular categories</li>
+            <li>Tenor, buyout value, and transfer procedures are defined in the final agreement</li>
+          </ul>
+          <a href="mailto:asanirwanaselaras@gmail.com?subject=Lease-to-Own%20Partnership%20Inquiry" class="btn-outline">Check Eligibility</a>
+        </article>
+      </div>
+      <p class="partnership-note">Each program has its own requirements, risks, costs, and conditions. Profit sharing is not guaranteed; complete terms must be reviewed in the signed partnership agreement.</p>
+
+      <div class="partnership-process" data-aos="fade-up">
+        <h3>How to Join in 4 Steps</h3>
+        <div class="process-grid">
+          <div class="process-step"><span class="step-number">01</span><h4>Registration</h4><p>Contact customer service for program information and the application form.</p></div>
+          <div class="process-step"><span class="step-number">02</span><h4>Verification</h4><p>The team reviews identification, legal documents, and vehicle condition where applicable.</p></div>
+          <div class="process-step"><span class="step-number">03</span><h4>Agreement</h4><p>Review the terms and sign a cooperation agreement before a notary.</p></div>
+          <div class="process-step"><span class="step-number">04</span><h4>Operations</h4><p>Fleet operations begin with monitoring and reporting under the signed contract.</p></div>
+        </div>
+      </div>
+
+      <div class="cooperative-values" data-aos="fade-up">
+        <img src="/images/logo-kjans-official.svg" alt="Official Koperasi Jasa Asa Nirwana Selaras logo" width="260" height="78" loading="lazy" />
+        <div>
+          <h3>Independent, Transparent, and Collaborative</h3>
+          <p>KJANS envisions a trusted, digital-first transportation cooperative that delivers long-term value to members. Its mission covers safe fleets, transparent partnership management, driver welfare, and asset protection. Registration and supporting legal documents can be requested directly from the cooperative for further review.</p>
         </div>
       </div>
     </div>
@@ -2190,7 +2290,7 @@
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <span class="section-eyebrow">Why Choose Us</span>
-        <h2>Why Choose ANS?</h2>
+        <h2>Why Choose KJANS?</h2>
       </div>
       <div class="why-grid">
         <div class="why-card" data-aos="fade-up">
@@ -2227,7 +2327,7 @@
       <div class="faq-list" id="faqList" itemscope itemtype="https://schema.org/FAQPage">
         <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-q" itemprop="name">Are daily, monthly, and yearly rentals available?<span class="faq-ico">+</span></button>
-          <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Yes. ANS offers daily, monthly, and yearly rentals. Self-drive options are subject to requirements and vehicle availability.</p></div>
+          <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Yes. KJANS offers daily, monthly, and yearly rentals. Self-drive options are subject to requirements and vehicle availability.</p></div>
         </div>
         <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-q" itemprop="name">Does the rental include insurance?<span class="faq-ico">+</span></button>
@@ -2253,7 +2353,7 @@
     <div class="container contact-grid">
       <div class="contact-text" data-aos="fade-right">
         <span class="section-eyebrow light">Contact Us</span>
-        <h2>Ready to Drive with ANS?</h2>
+        <h2>Ready to Drive with KJANS?</h2>
         <p>Discuss vehicle rentals, driver services, employee shuttles, or tourism trips with our team.</p>
         <a href="https://wa.me/628522005585" class="whatsapp-btn" target="_blank" rel="noopener">
           <span class="pulse"></span>
@@ -2261,7 +2361,10 @@
           Chat via WhatsApp
         </a>
         <div class="contact-info">
-          <div><strong>Phone</strong><span>+62 852-2200-5585</span></div>
+          <div><strong>Car Rental</strong><span><a href="tel:+628522005585">+62 852-2200-5585</a></span></div>
+          <div><strong>Partnership CS</strong><span><a href="tel:+628151840631">+62 815-184-0631</a> (Mon–Thu, 09:00–13:00 WIB)</span></div>
+          <div><strong>Partnership Email</strong><span><a href="mailto:asanirwanaselaras@gmail.com">asanirwanaselaras@gmail.com</a></span></div>
+          <div><strong>Cooperative Base</strong><span>East Bekasi, West Java</span></div>
           <div><strong>Service Area</strong><span>Greater Jakarta (Jabodetabek)</span></div>
         </div>
       </div>
@@ -2303,7 +2406,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="foot-brand">
-        <img src="/images/logo-asa-nirwana-selaras.webp" alt="Koperasi Jasa Asa Nirwana Selaras Logo" width="54" height="54" loading="lazy" />
+        <img src="/images/icon-kjans-official.svg" alt="Official KJANS logo" width="54" height="54" loading="lazy" />
         <h4>Koperasi Jasa Asa Nirwana Selaras</h4>
         <p>Toyota &amp; Daihatsu 7-seaters and Hiace / Elf Long for daily, monthly, yearly rentals, employee shuttles, and group trips across Greater Jakarta.</p>
       </div>
@@ -2312,6 +2415,7 @@
         <a href="#about">About</a>
         <a href="#fleet">Fleet</a>
         <a href="#schemes">Services</a>
+        <a href="#partnership">Partnerships</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </div>
@@ -2326,6 +2430,9 @@
       <div>
         <h5>Contact</h5>
         <a href="tel:+628522005585">+62 852-2200-5585</a>
+        <a href="tel:+628151840631">CS: +62 815-184-0631</a>
+        <a href="mailto:asanirwanaselaras@gmail.com">Partnership Email</a>
+        <a href="#partnership">KJANS Programs</a>
         <a href="https://wa.me/628522005585" target="_blank" rel="noopener">WhatsApp Chat</a>
         <a href="#contact">Greater Jakarta (Jabodetabek)</a>
       </div>
@@ -2344,7 +2451,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/628522005585?text=Hi%20ANS%2C%20I%20would%20like%20to%20consult%20about%20car%20rental%20from%20Koperasi%20Jasa%20Asa%20Nirwana%20Selaras" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp for car rental consultation">
+  <a href="https://wa.me/628522005585?text=Hi%20KJANS%2C%20I%20would%20like%20to%20consult%20about%20car%20rental%20from%20Koperasi%20Jasa%20Asa%20Nirwana%20Selaras" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp for car rental consultation">
     <span class="wa-float-pulse"></span>
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51H7.73c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 22a10 10 0 008.76-14.84L22 2l-5.34 1.2A10 10 0 1012 22z"/></svg>
     <span class="wa-float-label">Chat with Us</span>
@@ -2513,7 +2620,7 @@
         var phone = document.getElementById('formPhone').value || '';
         var needs = document.getElementById('formNeeds').value || '';
         var message = document.getElementById('formMessage').value || '';
-        var text = 'Hi ANS, I am ' + company + ', Phone: ' + phone + ', Needs: ' + needs + '. Message: ' + message;
+        var text = 'Hi KJANS, I am ' + company + ', Phone: ' + phone + ', Needs: ' + needs + '. Message: ' + message;
         var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
         success.classList.add('show');
         gsap.fromTo(success, { y: 10, opacity: 0, scale: 0.95 },

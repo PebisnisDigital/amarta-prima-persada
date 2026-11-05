@@ -8,8 +8,8 @@
   <meta name="googlebot" content="index, follow" />
   <meta name="author" content="Koperasi Jasa Asa Nirwana Selaras" />
   <meta name="keywords" content="sewa mobil Jakarta, rental mobil Jakarta, Toyota 7 seater, Daihatsu 7 seater, sewa Hiace, sewa Elf Long, rental mobil harian, sewa mobil bulanan, rental mobil tahunan, sewa lepas kunci, sewa mobil dengan sopir, sewa mobil sopir BBM, antar jemput karyawan, open trip pariwisata, rental mobil korporat, Koperasi Jasa Asa Nirwana Selaras" />
-  <meta name="description" content="Jasa sewa mobil Toyota &amp; Daihatsu 7 seater serta Hiace / Elf Long di Jakarta. Layanan harian, bulanan, tahunan, lepas kunci, dengan sopir, paket sopir &amp; BBM, antar-jemput karyawan, dan open trip pariwisata." />
-  <meta name="geo.region" content="ID-JK" />
+  <meta name="description" content="Koperasi Jasa Asa Nirwana Selaras (KJANS): rental mobil Toyota, Daihatsu, Hiace / Elf Long di Jabodetabek serta program kemitraan Titip Mobil, Sewa Murni dan Sewa Kepemilikan." />
+  <meta name="geo.region" content="ID-JB" />
   <link rel="canonical" href="https://amarta-prima-persada.vercel.app/" />
   <link rel="alternate" hreflang="id" href="https://amarta-prima-persada.vercel.app/" />
   <link rel="alternate" hreflang="en" href="https://amarta-prima-persada.vercel.app/en/" />
@@ -34,7 +34,7 @@
   <meta name="twitter:image" content="https://amarta-prima-persada.vercel.app/images/og-cover.webp" />
   <meta name="twitter:image:alt" content="Sewa Mobil Korporat Jakarta - Koperasi Jasa Asa Nirwana Selaras" />
 
-  <link rel="icon" type="image/webp" href="/images/logo-asa-nirwana-selaras.webp" />
+  <link rel="icon" type="image/svg+xml" href="/images/icon-kjans-official.svg" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,10 +50,10 @@
         "@type": ["AutomotiveBusiness", "LocalBusiness"],
         "@id": "https://amarta-prima-persada.vercel.app/#organization",
         "name": "Koperasi Jasa Asa Nirwana Selaras",
-        "alternateName": "ANS",
+        "alternateName": "KJANS",
         "description": "Penyedia jasa sewa Toyota dan Daihatsu 7 seater serta Hiace / Elf Long di Jakarta. Layanan harian, bulanan, tahunan, lepas kunci, sopir, paket BBM, antar-jemput karyawan, dan open trip pariwisata.",
         "url": "https://amarta-prima-persada.vercel.app/",
-        "logo": "https://amarta-prima-persada.vercel.app/images/logo-asa-nirwana-selaras.webp",
+        "logo": "https://amarta-prima-persada.vercel.app/images/logo-kjans-official.svg",
         "image": "https://amarta-prima-persada.vercel.app/images/og-cover.webp",
         "telephone": "+62-852-2200-5585",
         "priceRange": "$$",
@@ -86,13 +86,16 @@
         "name": "Koperasi Jasa Asa Nirwana Selaras",
         "legalName": "Koperasi Jasa Asa Nirwana Selaras",
         "url": "https://amarta-prima-persada.vercel.app/",
-        "logo": "https://amarta-prima-persada.vercel.app/images/logo-asa-nirwana-selaras.webp",
+        "logo": "https://amarta-prima-persada.vercel.app/images/logo-kjans-official.svg",
+        "email": "asanirwanaselaras@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bekasi Timur", "addressRegion": "Jawa Barat", "addressCountry": "ID" },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+62-852-2200-5585",
           "contactType": "sales",
           "areaServed": "ID"
-        }
+        },
+        "department": { "@type": "Organization", "name": "Kemitraan KJANS", "email": "asanirwanaselaras@gmail.com", "telephone": "+62-815-184-0631" }
       },
       {
         "@type": "WebSite",
@@ -150,7 +153,7 @@
             "name": "Apakah tersedia sewa harian, bulanan, dan tahunan?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ya. ANS menyediakan sewa harian, bulanan, dan tahunan. Pilihan lepas kunci dapat dikonsultasikan sesuai persyaratan dan ketersediaan armada."
+              "text": "Ya. KJANS menyediakan sewa harian, bulanan, dan tahunan. Pilihan lepas kunci dapat dikonsultasikan sesuai persyaratan dan ketersediaan armada."
             }
           },
           {
@@ -1211,6 +1214,27 @@
       box-shadow: inset 0 0 0 3px var(--sky);
     }
 
+    /* PARTNERSHIP - built from the same rental card design system */
+    .partnership { background: var(--gray-50); }
+    .partnership-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .partnership .scheme-card { padding: 32px 26px; }
+    .partnership .scheme-card:last-child { grid-column: auto; }
+    .partnership .scheme-card h3 { font-size: 21px; }
+    .partnership .scheme-card .scheme-icon { margin-bottom: 18px; }
+    .partnership .scheme-card ul { margin-bottom: 20px; }
+    .partnership-note { margin: 24px auto 0; max-width: 810px; text-align: center; color: var(--gray-500); font-size: 13px; }
+    .partnership-process { margin-top: 65px; }
+    .partnership-process h3 { text-align: center; font-size: 28px; margin-bottom: 26px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .process-step { padding: 24px; border-radius: 16px; background: #fff; border: 1px solid var(--gray-100); }
+    .process-step .step-number { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 12px; color: var(--navy-dark); background: var(--gold-soft); font-weight: 800; margin-bottom: 14px; }
+    .process-step h4 { color: var(--navy); font-size: 17px; margin-bottom: 8px; }
+    .process-step p { color: var(--gray-500); font-size: 14px; }
+    .cooperative-values { margin-top: 48px; display: grid; grid-template-columns: 260px 1fr; align-items: center; gap: 28px; padding: 28px 34px; background: #fff; border: 1px solid var(--gray-100); border-radius: 20px; }
+    .cooperative-values img { width: 260px; height: auto; }
+    .cooperative-values h3 { font-size: 21px; margin-bottom: 8px; }
+    .cooperative-values p { color: var(--gray-500); font-size: 14.5px; }
+
     /* WHY */
     .why {
       background: var(--gray-50)
@@ -1435,7 +1459,8 @@
     }
 
     .contact-info span {
-      color: rgba(255, 255, 255, .9)
+      color: rgba(255, 255, 255, .9);
+      overflow-wrap: anywhere;
     }
 
     .contact-form {
@@ -1785,6 +1810,9 @@
 
       .scheme-card:last-child { grid-column: auto; }
 
+      .partnership-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px
@@ -1822,6 +1850,10 @@
 
       .fleet-category-grid { grid-template-columns: 1fr; }
 
+      .process-grid, .cooperative-values { grid-template-columns: 1fr; }
+      .cooperative-values { padding: 24px; }
+      .cooperative-values img { width: min(260px, 100%); }
+
       .brand-text {
         display: none
       }
@@ -1846,7 +1878,7 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner container">
       <a href="#" class="brand">
-        <img src="/images/logo-asa-nirwana-selaras.webp" alt="Logo Koperasi Jasa Asa Nirwana Selaras - Sewa Mobil Korporat Jakarta" width="56" height="56" />
+        <img src="/images/icon-kjans-official.svg" alt="Logo resmi KJANS" width="56" height="56" />
         <div class="brand-text">
           <span class="brand-name">Asa Nirwana Selaras</span>
           <span class="brand-tag">Koperasi Jasa Transportasi</span>
@@ -1856,6 +1888,7 @@
         <a href="#about">Tentang</a>
         <a href="#fleet">Armada</a>
         <a href="#schemes">Layanan</a>
+        <a href="#partnership">Kemitraan</a>
         <a href="#faq">FAQ</a>
         <a href="#contact" class="nav-cta">Kontak</a>
         <div class="lang-switch" aria-label="Language">
@@ -1930,7 +1963,7 @@
             <div class="spec"><span>Bahan Bakar</span><strong id="carFuel">Bensin</strong></div>
             <div class="spec"><span>Transmisi</span><strong id="carTrans">Manual / Matic</strong></div>
           </div>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20konsultasi%20sewa%20armada" class="btn-primary" id="heroCta">
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20konsultasi%20sewa%20armada" class="btn-primary" id="heroCta">
             <span>Konsultasi Sekarang</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
@@ -1962,18 +1995,20 @@
       <div class="about-text" data-aos="fade-right">
         <span class="section-eyebrow">Tentang Kami</span>
         <h2>Partner Transportasi Terpercaya untuk Bisnis Anda di Jakarta</h2>
-        <p>Koperasi Jasa Asa Nirwana Selaras (ANS) menyediakan <strong>jasa sewa mobil harian, bulanan, dan tahunan</strong> untuk kebutuhan pribadi, bisnis, dan rombongan. Pilihan armada meliputi <strong>Toyota 7 seater, Daihatsu 7 seater, serta Hiace / Elf Long</strong>, dengan opsi lepas kunci maupun layanan sopir.</p>
+        <p><strong>Koperasi Jasa Asa Nirwana Selaras (KJANS)</strong> adalah koperasi jasa transportasi yang beradaptasi dengan teknologi dan perkembangan mobilitas modern. Kami mengelola layanan transportasi serta kemitraan armada secara profesional dengan semangat kemandirian dan gotong royong.</p>
+        <p>Kami menyediakan <strong>sewa mobil harian, bulanan, dan tahunan</strong> untuk kebutuhan pribadi, bisnis, dan rombongan. Pilihan armada meliputi <strong>Toyota 7 seater, Daihatsu 7 seater, serta Hiace / Elf Long</strong>, termasuk opsi lepas kunci dan layanan sopir.</p>
         <p>Kami melayani area <strong>Jakarta, Tangerang, Bekasi, Depok, dan Bogor</strong>. Dengan armada terawat dan layanan transportasi yang fleksibel, kami membantu perusahaan maupun individu merencanakan perjalanan secara praktis.</p>
         <div class="about-badges">
           <span>Koperasi Jasa</span>
           <span>Armada Terawat</span>
           <span>Layanan 24 Jam</span>
           <span>Wilayah Jabodetabek</span>
+          <span>Berbasis Bekasi Timur</span>
         </div>
       </div>
       <div class="about-visual" data-aos="fade-left">
         <div class="orbit">
-          <div class="orbit-core"><img src="/images/logo-asa-nirwana-selaras.webp" alt="Logo Koperasi Jasa Asa Nirwana Selaras - Jasa Rental Mobil Korporat" width="90" height="90" loading="lazy" /></div>
+          <div class="orbit-core"><img src="/images/icon-kjans-official.svg" alt="Simbol resmi KJANS" width="90" height="90" loading="lazy" /></div>
           <div class="orbit-ring ring-1"><span></span></div>
           <div class="orbit-ring ring-2"><span></span></div>
           <div class="orbit-ring ring-3"><span></span></div>
@@ -1995,21 +2030,21 @@
           <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16V9l2-4h12l2 4v7M4 13h16M6 16v2m12-2v2M7 10h.01M17 10h.01"/><path d="M7 5l-2 6m12-6 2 6"/></svg>
           <h3>Toyota 7 Seater</h3>
           <p>MPV untuk perjalanan keluarga, operasional bisnis, dan perjalanan dinas.</p>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20sewa%20Toyota%207%20seater" target="_blank" rel="noopener">Tanya Armada &rarr;</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20sewa%20Toyota%207%20seater" target="_blank" rel="noopener">Tanya Armada &rarr;</a>
         </article>
         <article class="fleet-category-card" data-aos="fade-up" data-aos-delay="80">
           <span class="category-number">02 / 7 SEATER</span>
           <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16V9l2-4h12l2 4v7M4 13h16M6 16v2m12-2v2M7 10h.01M17 10h.01"/><path d="M7 5l-2 6m12-6 2 6"/></svg>
           <h3>Daihatsu 7 Seater</h3>
           <p>Pilihan kendaraan 7 penumpang untuk sewa harian hingga tahunan.</p>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20sewa%20Daihatsu%207%20seater" target="_blank" rel="noopener">Tanya Armada &rarr;</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20sewa%20Daihatsu%207%20seater" target="_blank" rel="noopener">Tanya Armada &rarr;</a>
         </article>
         <article class="fleet-category-card" data-aos="fade-up" data-aos-delay="160">
           <span class="category-number">03 / ROMBONGAN</span>
           <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M5 9h14M7 9v5m5-5v5m5-5v5M6 18v2m12-2v2"/></svg>
           <h3>Hiace / Elf Long</h3>
           <p>Transportasi rombongan untuk kegiatan perusahaan, shuttle, dan wisata.</p>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20sewa%20Hiace%20atau%20Elf%20Long" target="_blank" rel="noopener">Tanya Armada &rarr;</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20sewa%20Hiace%20atau%20Elf%20Long" target="_blank" rel="noopener">Tanya Armada &rarr;</a>
         </article>
       </div>
       <h3 class="fleet-subtitle">Contoh Unit Toyota 7 Seater</h3>
@@ -2026,7 +2061,7 @@
               <span>Bensin</span><span>&middot;</span>
               <span>Manual / Matic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20harga%20Toyota%20Avanza" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
+            <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20harga%20Toyota%20Avanza" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="80">
@@ -2041,7 +2076,7 @@
               <span>Bensin</span><span>&middot;</span>
               <span>CVT Matic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20harga%20Toyota%20Veloz" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
+            <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20harga%20Toyota%20Veloz" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="160">
@@ -2056,7 +2091,7 @@
               <span>Bensin</span><span>&middot;</span>
               <span>Manual / Matic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20harga%20Toyota%20Innova%20Reborn" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
+            <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20harga%20Toyota%20Innova%20Reborn" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="240">
@@ -2071,7 +2106,7 @@
               <span>Diesel 2.4</span><span>&middot;</span>
               <span>Automatic</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20harga%20Innova%20Reborn%202.4%20Diesel" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
+            <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20harga%20Innova%20Reborn%202.4%20Diesel" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="320">
@@ -2086,7 +2121,7 @@
               <span>Hybrid 2.0</span><span>&middot;</span>
               <span>e-CVT</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20harga%20Innova%20Zenix%20G%202.0%20Hybrid" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
+            <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20harga%20Innova%20Zenix%20G%202.0%20Hybrid" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
           </div>
         </div>
         <div class="fleet-card" data-aos="fade-up" data-aos-delay="400">
@@ -2101,7 +2136,7 @@
               <span>Hybrid 2.0</span><span>&middot;</span>
               <span>e-CVT</span>
             </div>
-            <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20harga%20Innova%20Zenix%20Q%202.0%20Hybrid" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
+            <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20harga%20Innova%20Zenix%20Q%202.0%20Hybrid" target="_blank" rel="noopener" class="btn-outline">Tanya Harga</a>
           </div>
         </div>
       </div>
@@ -2112,7 +2147,7 @@
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <span class="section-eyebrow">Jenis Layanan</span>
-        <h2>5 Layanan Transportasi ANS</h2>
+        <h2>5 Layanan Transportasi KJANS</h2>
         <p>Pilih layanan yang sesuai dengan rencana perjalanan, kebutuhan operasional, atau kegiatan wisata Anda.</p>
       </div>
       <div class="scheme-grid">
@@ -2127,7 +2162,7 @@
             <li>Bulanan untuk kebutuhan rutin</li>
             <li>Tahunan untuk operasional berkelanjutan</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20sewa%20harian%2Fbulanan%2Ftahunan%20dan%20opsi%20lepas%20kunci" target="_blank" rel="noopener" class="btn-outline">Minta Penawaran</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20sewa%20harian%2Fbulanan%2Ftahunan%20dan%20opsi%20lepas%20kunci" target="_blank" rel="noopener" class="btn-outline">Minta Penawaran</a>
         </div>
         <div class="scheme-card featured" data-aos="fade-up" data-aos-delay="100">
           <span class="badge">Populer</span>
@@ -2141,7 +2176,7 @@
             <li>Pengemudi dalam satu layanan</li>
             <li>Pilihan armada sesuai kebutuhan</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20sewa%20mobil%20beserta%20sopir" target="_blank" rel="noopener" class="btn-outline">Tanya Layanan</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20sewa%20mobil%20beserta%20sopir" target="_blank" rel="noopener" class="btn-outline">Tanya Layanan</a>
         </div>
         <div class="scheme-card" data-aos="fade-up" data-aos-delay="160">
           <div class="scheme-icon">
@@ -2154,7 +2189,7 @@
             <li>Pengemudi termasuk paket</li>
             <li>BBM termasuk sesuai kesepakatan</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20penawaran%20sewa%20bulanan%20plus%20sopir%20dan%20BBM" target="_blank" rel="noopener" class="btn-outline">Minta Penawaran</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20penawaran%20sewa%20bulanan%20plus%20sopir%20dan%20BBM" target="_blank" rel="noopener" class="btn-outline">Minta Penawaran</a>
         </div>
         <div class="scheme-card" data-aos="fade-up" data-aos-delay="240">
           <div class="scheme-icon">
@@ -2167,7 +2202,7 @@
             <li>Untuk kebutuhan perusahaan</li>
             <li>Armada sesuai jumlah penumpang</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20layanan%20antar%20jemput%20karyawan" target="_blank" rel="noopener" class="btn-outline">Atur Penjemputan</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20layanan%20antar%20jemput%20karyawan" target="_blank" rel="noopener" class="btn-outline">Atur Penjemputan</a>
         </div>
         <div class="scheme-card" data-aos="fade-up" data-aos-delay="320">
           <div class="scheme-icon">
@@ -2180,7 +2215,72 @@
             <li>Pilihan kendaraan 7 seater dan rombongan</li>
             <li>Rencana perjalanan dikonsultasikan</li>
           </ul>
-          <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20tanya%20open%20trip%20pariwisata" target="_blank" rel="noopener" class="btn-outline">Tanya Open Trip</a>
+          <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20tanya%20open%20trip%20pariwisata" target="_blank" rel="noopener" class="btn-outline">Tanya Open Trip</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partnership section" id="partnership">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="section-eyebrow">Program Kemitraan KJANS</span>
+        <h2>Mobil Bisa Jadi Aset yang Produktif</h2>
+        <p>Selain layanan rental, KJANS membuka kemitraan pengelolaan armada untuk pemilik mobil, calon mitra unit baru, dan pengemudi. Setiap skema mengikuti persyaratan dan perjanjian yang disepakati.</p>
+      </div>
+      <div class="partnership-grid">
+        <article class="scheme-card" data-aos="fade-up">
+          <div class="scheme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15V9l2-4h12l2 4v6M4 12h16M6 15v2m12-2v2M8 9h8"/><path d="m8 20 2 2 5-5"/></svg></div>
+          <h3>Titip Mobil</h3>
+          <p>Punya mobil yang jarang digunakan? KJANS menawarkan pengelolaan unit melalui pengemudi terverifikasi dengan pembagian hasil sesuai akad kerja sama.</p>
+          <ul>
+            <li>Rekomendasi Sigra, Xenia, Avanza, Veloz, dan Innova</li>
+            <li>Persyaratan unit antara lain usia maksimal 2 tahun dan kilometer di bawah 100.000</li>
+            <li>GPS, asuransi, dan laporan berkala sesuai ketentuan program</li>
+          </ul>
+          <a href="mailto:asanirwanaselaras@gmail.com?subject=Konsultasi%20Program%20Titip%20Mobil" class="btn-outline">Tanya Kemitraan</a>
+        </article>
+        <article class="scheme-card featured" data-aos="fade-up" data-aos-delay="100">
+          <span class="badge">Unit Baru</span>
+          <div class="scheme-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h18M5 17l2-8h10l2 8M7 9l2-4h6l2 4M7 17v2m10-2v2"/><path d="M8 13h2m4 0h2"/></svg></div>
+          <h3>Sewa Murni</h3>
+          <p>Program pengadaan kendaraan baru melalui jaringan dealer resmi, dengan dukungan proses pengajuan dan pengelolaan armada sesuai persetujuan mitra.</p>
+          <ul>
+            <li>Kategori Standar: Daihatsu Sigra / Toyota Calya</li>
+            <li>Kategori Reguler: Daihatsu Xenia / Toyota Avanza</li>
+            <li>Ketentuan DP, pembiayaan, dan kontrak dikonfirmasi sebelum akad</li>
+          </ul>
+          <a href="mailto:asanirwanaselaras@gmail.com?subject=Konsultasi%20Program%20Sewa%20Murni" class="btn-outline">Bahas Skema</a>
+        </article>
+        <article class="scheme-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="scheme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12 12 3l9 9-9 9-9-9Z"/><circle cx="12" cy="12" r="3"/><path d="M15 6h4"/></svg></div>
+          <h3>Sewa Kepemilikan</h3>
+          <p>Skema jangka panjang untuk pengemudi mitra dengan kemungkinan kepemilikan kendaraan setelah kontrak berakhir dan kewajiban nilai tebus dipenuhi.</p>
+          <ul>
+            <li>Ditujukan bagi pengemudi mitra yang memenuhi kriteria</li>
+            <li>Opsi unit baru kategori Standar dan Reguler</li>
+            <li>Tenor, nilai tebus, dan balik nama mengikuti perjanjian final</li>
+          </ul>
+          <a href="mailto:asanirwanaselaras@gmail.com?subject=Konsultasi%20Program%20Sewa%20Kepemilikan" class="btn-outline">Cek Persyaratan</a>
+        </article>
+      </div>
+      <p class="partnership-note">Program kemitraan memiliki persyaratan, risiko, biaya, dan ketentuan tersendiri. Pembagian hasil tidak dijamin; seluruh rincian harus dikonfirmasi dalam dokumen kerja sama.</p>
+
+      <div class="partnership-process" data-aos="fade-up">
+        <h3>4 Langkah Bergabung</h3>
+        <div class="process-grid">
+          <div class="process-step"><span class="step-number">01</span><h4>Isi Formulir</h4><p>Hubungi CS untuk memperoleh informasi dan formulir pendaftaran kemitraan.</p></div>
+          <div class="process-step"><span class="step-number">02</span><h4>Verifikasi</h4><p>Tim memeriksa identitas, legalitas, serta kondisi kendaraan sesuai program.</p></div>
+          <div class="process-step"><span class="step-number">03</span><h4>Perjanjian</h4><p>Pelajari ketentuan, lalu tanda tangani perjanjian kerja sama di hadapan notaris.</p></div>
+          <div class="process-step"><span class="step-number">04</span><h4>Operasional</h4><p>Unit mulai dikelola dengan pemantauan dan pelaporan berkala sesuai kontrak.</p></div>
+        </div>
+      </div>
+
+      <div class="cooperative-values" data-aos="fade-up">
+        <img src="/images/logo-kjans-official.svg" alt="Logo resmi Koperasi Jasa Asa Nirwana Selaras" width="260" height="78" loading="lazy" />
+        <div>
+          <h3>Mandiri, Transparan, dan Berlandaskan Gotong Royong</h3>
+          <p>Visi KJANS adalah menjadi koperasi jasa transportasi berbasis teknologi digital yang tepercaya serta memberi manfaat jangka panjang bagi anggota. Misinya mencakup penyediaan armada yang aman, pengelolaan dana kemitraan yang transparan, kesejahteraan pengemudi, dan perlindungan aset. Informasi badan hukum dan dokumen pendukung dapat diminta kepada tim koperasi untuk pemeriksaan lebih lanjut.</p>
         </div>
       </div>
     </div>
@@ -2190,7 +2290,7 @@
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <span class="section-eyebrow">Keunggulan</span>
-        <h2>Mengapa Memilih ANS?</h2>
+        <h2>Mengapa Memilih KJANS?</h2>
       </div>
       <div class="why-grid">
         <div class="why-card" data-aos="fade-up">
@@ -2226,7 +2326,7 @@
       <div class="faq-list" id="faqList" itemscope itemtype="https://schema.org/FAQPage">
         <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-q" itemprop="name">Apakah tersedia sewa harian, bulanan, dan tahunan?<span class="faq-ico">+</span></button>
-          <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Ya. ANS menyediakan sewa harian, bulanan, dan tahunan. Pilihan lepas kunci dapat dikonsultasikan sesuai persyaratan dan ketersediaan armada.</p></div>
+          <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Ya. KJANS menyediakan sewa harian, bulanan, dan tahunan. Pilihan lepas kunci dapat dikonsultasikan sesuai persyaratan dan ketersediaan armada.</p></div>
         </div>
         <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-q" itemprop="name">Apakah mobil sudah termasuk asuransi?<span class="faq-ico">+</span></button>
@@ -2252,7 +2352,7 @@
     <div class="container contact-grid">
       <div class="contact-text" data-aos="fade-right">
         <span class="section-eyebrow light">Hubungi Kami</span>
-        <h2>Siap Jalan Bersama ANS?</h2>
+        <h2>Siap Jalan Bersama KJANS?</h2>
         <p>Konsultasikan sewa mobil, layanan sopir, antar-jemput karyawan, atau open trip bersama tim kami.</p>
         <a href="https://wa.me/628522005585" class="whatsapp-btn" target="_blank" rel="noopener">
           <span class="pulse"></span>
@@ -2260,7 +2360,10 @@
           Chat via WhatsApp
         </a>
         <div class="contact-info">
-          <div><strong>Telepon</strong><span>+62 852-2200-5585</span></div>
+          <div><strong>Rental &amp; Transportasi</strong><span><a href="tel:+628522005585">+62 852-2200-5585</a></span></div>
+          <div><strong>CS Kemitraan</strong><span><a href="tel:+628151840631">+62 815-184-0631</a> (Senin–Kamis, 09.00–13.00)</span></div>
+          <div><strong>Email Kemitraan</strong><span><a href="mailto:asanirwanaselaras@gmail.com">asanirwanaselaras@gmail.com</a></span></div>
+          <div><strong>Domisili Koperasi</strong><span>Bekasi Timur, Jawa Barat</span></div>
           <div><strong>Wilayah Layanan</strong><span>Jabodetabek</span></div>
         </div>
       </div>
@@ -2302,7 +2405,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="foot-brand">
-        <img src="/images/logo-asa-nirwana-selaras.webp" alt="Logo Koperasi Jasa Asa Nirwana Selaras" width="54" height="54" loading="lazy" />
+        <img src="/images/icon-kjans-official.svg" alt="Logo resmi KJANS" width="54" height="54" loading="lazy" />
         <h4>Koperasi Jasa Asa Nirwana Selaras</h4>
         <p>Sewa mobil Toyota &amp; Daihatsu 7 seater serta Hiace / Elf Long untuk harian, bulanan, tahunan, antar-jemput karyawan, dan pariwisata di Jabodetabek.</p>
       </div>
@@ -2311,6 +2414,7 @@
         <a href="#about">Tentang</a>
         <a href="#fleet">Armada</a>
         <a href="#schemes">Layanan</a>
+        <a href="#partnership">Kemitraan</a>
         <a href="#faq">FAQ</a>
       </div>
       <div>
@@ -2324,6 +2428,9 @@
       <div>
         <h5>Kontak</h5>
         <a href="tel:+628522005585">+62 852-2200-5585</a>
+        <a href="tel:+628151840631">CS: +62 815-184-0631</a>
+        <a href="mailto:asanirwanaselaras@gmail.com">Email Kemitraan</a>
+        <a href="#partnership">Program KJANS</a>
         <a href="#contact">Wilayah Jabodetabek</a>
       </div>
     </div>
@@ -2341,7 +2448,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/628522005585?text=Halo%20ANS%2C%20saya%20ingin%20konsultasi%20sewa%20armada%20Koperasi%20Jasa%20Asa%20Nirwana%20Selaras" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp untuk konsultasi sewa mobil">
+  <a href="https://wa.me/628522005585?text=Halo%20KJANS%2C%20saya%20ingin%20konsultasi%20sewa%20armada%20Koperasi%20Jasa%20Asa%20Nirwana%20Selaras" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp untuk konsultasi sewa mobil">
     <span class="wa-float-pulse"></span>
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51H7.73c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 22a10 10 0 008.76-14.84L22 2l-5.34 1.2A10 10 0 1012 22z"/></svg>
     <span class="wa-float-label">Chat Kami</span>
@@ -2510,7 +2617,7 @@
         var phone = document.getElementById('formPhone').value || '';
         var needs = document.getElementById('formNeeds').value || '';
         var message = document.getElementById('formMessage').value || '';
-        var text = 'Halo ANS, saya ' + company + ', Telp: ' + phone + ', Kebutuhan: ' + needs + '. Pesan: ' + message;
+        var text = 'Halo KJANS, saya ' + company + ', Telp: ' + phone + ', Kebutuhan: ' + needs + '. Pesan: ' + message;
         var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
         success.classList.add('show');
         gsap.fromTo(success, { y: 10, opacity: 0, scale: 0.95 },

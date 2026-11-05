@@ -9,6 +9,9 @@ for (const file of files) {
   const content = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
   const isIndonesian = file === 'index.html';
   const fleetNames = ['Toyota 7 Seater', 'Daihatsu 7 Seater', 'Hiace / Elf Long'];
+  const partnershipNames = isIndonesian
+    ? ['Titip Mobil', 'Sewa Murni', 'Sewa Kepemilikan']
+    : ['Car Management (Titip Mobil)', 'New Unit Leasing (Sewa Murni)', 'Lease-to-Own (Sewa Kepemilikan)'];
   const serviceNames = isIndonesian
     ? ['Sewa Harian / Bulanan / Tahunan', 'Sewa Mobil + Sopir', 'Sewa Bulanan + Sopir &amp; BBM', 'Antar-Jemput Karyawan', 'Open Trip Pariwisata']
     : ['Daily / Monthly / Yearly Rental', 'Car Rental with Driver', 'Monthly Rental + Driver &amp; Fuel', 'Employee Pick-Up &amp; Drop-Off', 'Open Group Tourism Trips'];
@@ -19,15 +22,21 @@ for (const file of files) {
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
-    ['local branded logo asset', content.includes('/images/logo-asa-nirwana-selaras.webp')],
+    ['official logo in navigation', content.includes('/images/icon-kjans-official.svg')],
+    ['official horizontal logo', content.includes('/images/logo-kjans-official.svg')],
+    ['official cooperative acronym', content.includes('KJANS') && !/\bANS\b/.test(content)],
     ['proper standalone canonical', content.includes('https://amarta-prima-persada.vercel.app')],
     ['public-facing site name', content.includes('Asa Nirwana Selaras')],
     ['new cooperative legal name', content.includes('Koperasi Jasa Asa Nirwana Selaras')],
     ['no old company branding', !content.includes('PT Amarta Prima Persada') && !content.includes('logo_amarta.webp')],
     ['no inherited old company contact details', !content.includes('amartaprimapersada.com') && !content.includes('Skyline Building')],
-    ['new WhatsApp greeting', !content.includes('Halo%20APP') && !content.includes('Hi%20APP')],
+    ['new WhatsApp greeting', !content.includes('Halo%20APP') && !content.includes('Hi%20APP') && !content.includes('%20ANS')],
     ['3 fleet categories', fleetNames.every((name) => content.includes(`<h3>${name}</h3>`))],
     ['5 transportation services', serviceNames.every((name) => content.includes(`<h3>${name}</h3>`))],
+    ['3 partnership programs', partnershipNames.every((name) => content.includes(`<h3>${name}</h3>`))],
+    ['partnership contact', content.includes('asanirwanaselaras@gmail.com') && content.includes('+62 815-184-0631')],
+    ['joining process', content.includes('class="partnership-process"') && (content.match(/class="process-step"/g) || []).length === 4],
+    ['rental WhatsApp unchanged', content.includes('https://wa.me/628522005585') && !content.includes('wa.me/628151840631')],
     ['no outdated Grab/Gojek offer', !/\bGrab\b|\bGojek\b|minimum 1 year|minimum 1 tahun/i.test(content)],
     ['5 service form options', (content.match(/<option(?! value="").*?<\/option>/g) || []).length === 6],
   ]) {
@@ -40,7 +49,7 @@ for (const file of files) {
   const structuredData = JSON.parse(structuredDataMatch[1]);
   const organization = structuredData['@graph'].find((entity) => Array.isArray(entity['@type']) && entity['@type'].includes('AutomotiveBusiness'));
   const website = structuredData['@graph'].find((entity) => entity['@type'] === 'WebSite');
-  if (organization?.name !== 'Koperasi Jasa Asa Nirwana Selaras' || website?.name !== 'Asa Nirwana Selaras') {
+  if (organization?.name !== 'Koperasi Jasa Asa Nirwana Selaras' || organization?.alternateName !== 'KJANS' || website?.name !== 'Asa Nirwana Selaras') {
     throw new Error(`${file}: organization and website name mismatch`);
   }
   checks += 1;
@@ -54,6 +63,14 @@ for (const file of files) {
     if (link[1] !== 'https://wa.me/628522005585') throw new Error(`${file}: unexpected WhatsApp link: ${link[1]}`);
   }
   checks += 1;
+
+  const ids = [...content.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+  if (new Set(ids).size !== ids.length) throw new Error(`${file}: duplicate HTML ids`);
+  const sections = new Set(ids);
+  for (const anchor of content.matchAll(/href="#([^"#]+)"/g)) {
+    if (!sections.has(anchor[1])) throw new Error(`${file}: invalid section link #${anchor[1]}`);
+  }
+  checks += 2;
 }
 
 for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
@@ -63,10 +80,13 @@ for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
 }
 
 const favicon = await readFile(new URL('../images/apple-touch-icon.png', import.meta.url));
-if (favicon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid ANS Apple touch icon');
-const logoSvg = await readFile(new URL('../images/logo-asa-nirwana-selaras.svg', import.meta.url), 'utf8');
-if (!logoSvg.includes('Asa Nirwana Selaras')) throw new Error('Invalid ANS vector logo');
-checks += 2;
+if (favicon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid KJANS Apple touch icon');
+for (const logo of ['icon-kjans-official.svg', 'logo-kjans-official.svg']) {
+  const svg = await readFile(new URL(`../images/${logo}`, import.meta.url), 'utf8');
+  if (!svg.includes('Koperasi') && !svg.includes('KJANS')) throw new Error(`Invalid official logo: ${logo}`);
+  checks += 1;
+}
+checks += 1;
 
 for (const name of ['gsap.min.js', 'ScrollTrigger.min.js', 'swiper-bundle.min.js', 'aos.js']) {
   const file = new URL(`../vendor/${name}`, import.meta.url);
