@@ -22,9 +22,9 @@ for (const file of files) {
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
-    ['Karansa logo in navigation and body', (content.match(/src="\/images\/logo-karansa-solution\.png"/g) || []).length === 4],
-    ['Karansa favicon and Apple touch icon', content.includes('rel="icon" type="image/png" href="/images/logo-karansa-solution.png"') && content.includes('rel="apple-touch-icon" href="/images/logo-karansa-solution.png"')],
-    ['no old logo references', !content.includes('/images/icon-kjans-official.svg') && !content.includes('/images/logo-kjans-official.svg')],
+    ['Karansa symbol in navigation and body', (content.match(/src="\/images\/karansa-symbol\.webp"/g) || []).length === 4],
+    ['transparent WebP favicon and Apple touch icon', content.includes('rel="icon" type="image/webp" href="/images/karansa-symbol.webp"') && content.includes('rel="apple-touch-icon" href="/images/karansa-touch-icon.png"')],
+    ['no old logo references', !content.includes('/images/logo-karansa-solution.png') && !content.includes('/images/icon-kjans-official.svg') && !content.includes('/images/logo-kjans-official.svg')],
     ['official cooperative acronym', content.includes('KJANS') && !/\bANS\b/.test(content)],
     ['proper standalone canonical', content.includes('https://amarta-prima-persada.vercel.app')],
     ['public-facing site name', content.includes('Asa Nirwana Selaras')],
@@ -80,10 +80,12 @@ for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
   checks += 1;
 }
 
-const karansaLogo = await readFile(new URL('../images/logo-karansa-solution.png', import.meta.url));
-if (karansaLogo.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid Karansa Solution logo/favicon');
-if (karansaLogo.length < 10000) throw new Error('Karansa Solution logo asset is unexpectedly small');
-checks += 2;
+const karansaSymbol = await readFile(new URL('../images/karansa-symbol.webp', import.meta.url));
+if (karansaSymbol.toString('ascii', 8, 12) !== 'WEBP') throw new Error('Invalid Karansa Solution WebP');
+if (karansaSymbol.length >= 50 * 1024) throw new Error('Karansa symbol exceeds 50 KB');
+const karansaTouchIcon = await readFile(new URL('../images/karansa-touch-icon.png', import.meta.url));
+if (karansaTouchIcon.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Invalid Karansa touch icon');
+checks += 3;
 
 for (const name of ['gsap.min.js', 'ScrollTrigger.min.js', 'swiper-bundle.min.js', 'aos.js']) {
   const file = new URL(`../vendor/${name}`, import.meta.url);
