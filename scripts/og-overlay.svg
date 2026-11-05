@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="navyVeil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#071A31" stop-opacity="1" />
+      <stop offset="48%" stop-color="#071A31" stop-opacity="0.96" />
+      <stop offset="70%" stop-color="#071A31" stop-opacity="0.52" />
+      <stop offset="100%" stop-color="#071A31" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#39C3E5" />
+      <stop offset="100%" stop-color="#6DE2DD" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#navyVeil)" />
+  <path d="M0 0H1200" stroke="#38BEE0" stroke-width="8" opacity="0.95" />
+  <path d="M0 622H1200" stroke="#F7A725" stroke-width="8" opacity="0.95" />
+  <circle cx="1060" cy="115" r="210" fill="none" stroke="#59DBE7" stroke-width="2" opacity="0.18" />
+  <circle cx="1060" cy="115" r="170" fill="none" stroke="#59DBE7" stroke-width="1" opacity="0.15" />
+  <rect x="68" y="93" width="112" height="112" rx="23" fill="#FFFFFF" />
+  <text x="198" y="138" font-family="DejaVu Sans" font-size="20" font-weight="700" letter-spacing="2" fill="#80D7ED">KOPERASI JASA</text>
+  <text x="198" y="170" font-family="DejaVu Sans" font-size="16" letter-spacing="1.6" fill="#E8F4FA">TRANSPORTASI &amp; RENTAL MOBIL</text>
+  <rect x="69" y="247" width="91" height="6" rx="3" fill="url(#cyanAccent)" />
+  <text x="68" y="335" font-family="DejaVu Sans" font-size="60" font-weight="700" letter-spacing="-2" fill="#FFFFFF">ASA NIRWANA</text>
+  <text x="68" y="418" font-family="DejaVu Sans" font-size="78" font-weight="700" letter-spacing="-1" fill="#54CAE9">SELARAS</text>
+  <text x="71" y="472" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#FFFFFF">Sewa Mobil untuk Semua Perjalanan</text>
+  <text x="71" y="508" font-family="DejaVu Sans" font-size="17" fill="#E4F0F5">Toyota 7 Seater  •  Daihatsu  •  Hiace / Elf</text>
+  <rect x="68" y="540" width="336" height="46" rx="12" fill="#F7A725" />
+  <text x="90" y="569" font-family="DejaVu Sans" font-size="17" font-weight="700" fill="#082744">HARIAN  •  BULANAN  •  WISATA</text>
+</svg>
