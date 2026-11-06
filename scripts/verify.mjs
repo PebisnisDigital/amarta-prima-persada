@@ -6,7 +6,7 @@ const imageNames = await readdir(imageDirectory);
 let checks = 0;
 const partnershipCss = await readFile(new URL('../partnership.css', import.meta.url), 'utf8');
 const partnershipJs = await readFile(new URL('./partnership.js', import.meta.url), 'utf8');
-if (!partnershipCss.includes('.kjans-sim-shell') || !partnershipJs.includes('628151840631') || !partnershipJs.includes('encodeURIComponent(text)')) {
+if (!partnershipCss.includes('.kjans-sim-shell') || !partnershipJs.includes('https://wa.me/628111004312?text=') || !partnershipJs.includes('encodeURIComponent(text)') || partnershipJs.includes('https://wa.me/628151840631')) {
   throw new Error('Partnership CSS or interactive WhatsApp script is incomplete');
 }
 checks += 3;
@@ -23,8 +23,8 @@ for (const file of files) {
     : ['Daily / Monthly / Yearly Rental', 'Car Rental with Driver', 'Monthly Rental + Driver &amp; Fuel', 'Employee Pick-Up &amp; Drop-Off', 'Open Group Tourism Trips'];
   for (const [label, condition] of [
     ['valid HTML page', /<!doctype html>/i.test(content)],
-    ['new WhatsApp number', content.includes('wa.me/628522005585')],
-    ['no old WhatsApp number', !content.includes('62811844312')],
+    ['new WhatsApp number', content.includes('wa.me/628111004312')],
+    ['no old WhatsApp links', !content.includes('wa.me/628522005585') && !content.includes('wa.me/628151840631') && !content.includes('62811844312')],
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
@@ -47,7 +47,7 @@ for (const file of files) {
     ['3 partnership programs', partnershipNames.every((name) => isIndonesian ? content.includes(`<h3>${name}`) : content.includes(`<h3>${name}</h3>`))],
     ['partnership contact', content.includes('asanirwanaselaras@gmail.com') && content.includes('+62 815-184-0631')],
     ['joining process', (isIndonesian ? content.includes('id="alur"') : content.includes('class="partnership-process"')) && (content.match(/class="process-step"/g) || []).length === 4],
-    ['rental WhatsApp unchanged', content.includes('https://wa.me/628522005585') && !content.includes('wa.me/628151840631')],
+    ['all WhatsApp CTAs use the approved number', content.includes('https://wa.me/628111004312') && !content.includes('wa.me/628151840631')],
     ['no outdated Grab/Gojek offer', !/\bGrab\b|\bGojek\b|minimum 1 year|minimum 1 tahun/i.test(content)],
     ['5 service form options', (content.match(/<option(?! value="").*?<\/option>/g) || []).length >= 6],
     ['draft partnership features', !isIndonesian || (
@@ -55,7 +55,7 @@ for (const file of files) {
       content.includes('id="ketentuan"') &&
       content.includes('id="hak-kewajiban"') &&
       content.includes('id="kjansPartnerForm"') &&
-      content.includes('/scripts/partnership.js?v=1')
+      content.includes('/scripts/partnership.js?v=2')
     )],
   ]) {
     if (!condition) throw new Error(`${file}: ${label} failed`);
@@ -78,7 +78,7 @@ for (const file of files) {
   checks += 2;
 
   for (const link of content.matchAll(/href="(https:\/\/wa\.me\/[^"?]+)[^"]*"/g)) {
-    if (link[1] !== 'https://wa.me/628522005585') throw new Error(`${file}: unexpected WhatsApp link: ${link[1]}`);
+    if (link[1] !== 'https://wa.me/628111004312') throw new Error(`${file}: unexpected WhatsApp link: ${link[1]}`);
   }
   checks += 1;
 

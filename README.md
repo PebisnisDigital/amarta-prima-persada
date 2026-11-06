@@ -8,7 +8,7 @@ Standalone static website for **Koperasi Jasa Asa Nirwana Selaras**, with the pu
 - Framework preset **Other**. This is a static site; no build command or `npm install` is needed.
 - Root Directory: repository root (`.`).
 - The main page is `/`, with an English page at `/en`.
-- Both languages retain the previously approved **rental WhatsApp** `+62 852-2200-5585` (`wa.me/628522005585`).
+- Both languages now route **all WhatsApp buttons**, including the partnership application form, to `+62 811-1004-312` (`wa.me/628111004312`).
 - Partnership contact from the client-provided proposal: CS telephone `+62 815-184-0631` (Monday–Thursday, 09:00–13:00 WIB), email `asanirwanaselaras@gmail.com`, and location East Bekasi, West Java. The proposal does **not** explicitly establish that the partnership number has WhatsApp, so it is linked as `tel:` rather than `wa.me`.
 - The cooperative's official KJANS logo is preserved from the supplied PDF as `images/logo-kjans-official.svg` and `images/icon-kjans-official.svg` (used in the site and favicon). The former temporary ANS art remains in the repository only for reference, not in the live HTML.
 - Images and vendored animation scripts are in `images/` and `vendor/`.

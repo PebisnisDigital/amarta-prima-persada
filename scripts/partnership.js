@@ -140,7 +140,7 @@
       '',
       'Mohon informasi syarat, rincian nilai, risiko, dan prosedur pendaftaran. Terima kasih.'
     ].join('\n');
-    var url = 'https://wa.me/628151840631?text=' + encodeURIComponent(text);
+    var url = 'https://wa.me/628111004312?text=' + encodeURIComponent(text);
     var opened = window.open(url, '_blank');
     if (opened) opened.opener = null;
     else window.location.href = url;
