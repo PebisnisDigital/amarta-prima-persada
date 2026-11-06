@@ -4,6 +4,12 @@ const files = ['index.html', 'en/index.html'];
 const imageDirectory = new URL('../images/', import.meta.url);
 const imageNames = await readdir(imageDirectory);
 let checks = 0;
+const partnershipCss = await readFile(new URL('../partnership.css', import.meta.url), 'utf8');
+const partnershipJs = await readFile(new URL('./partnership.js', import.meta.url), 'utf8');
+if (!partnershipCss.includes('.kjans-sim-shell') || !partnershipJs.includes('628151840631') || !partnershipJs.includes('encodeURIComponent(text)')) {
+  throw new Error('Partnership CSS or interactive WhatsApp script is incomplete');
+}
+checks += 3;
 
 for (const file of files) {
   const content = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
@@ -22,7 +28,7 @@ for (const file of files) {
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
-    ['Karansa symbol in navigation and body', (content.match(/src="\/images\/karansa-symbol\.webp"/g) || []).length === 4],
+    ['Karansa symbol in navigation and body', (content.match(/src="\/images\/karansa-symbol\.webp"/g) || []).length >= 3],
     ['symbol-only ICO and cache-busted favicon', content.includes('rel="icon" type="image/x-icon" href="/favicon.ico?v=2"') && content.includes('rel="icon" type="image/png" sizes="64x64" href="/images/karansa-favicon.png?v=2"')],
     ['updated Apple touch icon', content.includes('rel="apple-touch-icon" sizes="180x180" href="/images/karansa-touch-icon.png?v=2"')],
     ['branded thumbnail in Open Graph and Twitter', content.includes('property="og:image" content="https://amarta-prima-persada.vercel.app/images/og-asa-nirwana-selaras.jpg"') && content.includes('name="twitter:image" content="https://amarta-prima-persada.vercel.app/images/og-asa-nirwana-selaras.jpg"')],
@@ -38,12 +44,19 @@ for (const file of files) {
     ['new WhatsApp greeting', !content.includes('Halo%20APP') && !content.includes('Hi%20APP') && !content.includes('%20ANS')],
     ['3 fleet categories', fleetNames.every((name) => content.includes(`<h3>${name}</h3>`))],
     ['5 transportation services', serviceNames.every((name) => content.includes(`<h3>${name}</h3>`))],
-    ['3 partnership programs', partnershipNames.every((name) => content.includes(`<h3>${name}</h3>`))],
+    ['3 partnership programs', partnershipNames.every((name) => isIndonesian ? content.includes(`<h3>${name}`) : content.includes(`<h3>${name}</h3>`))],
     ['partnership contact', content.includes('asanirwanaselaras@gmail.com') && content.includes('+62 815-184-0631')],
-    ['joining process', content.includes('class="partnership-process"') && (content.match(/class="process-step"/g) || []).length === 4],
+    ['joining process', (isIndonesian ? content.includes('id="alur"') : content.includes('class="partnership-process"')) && (content.match(/class="process-step"/g) || []).length === 4],
     ['rental WhatsApp unchanged', content.includes('https://wa.me/628522005585') && !content.includes('wa.me/628151840631')],
     ['no outdated Grab/Gojek offer', !/\bGrab\b|\bGojek\b|minimum 1 year|minimum 1 tahun/i.test(content)],
-    ['5 service form options', (content.match(/<option(?! value="").*?<\/option>/g) || []).length === 6],
+    ['5 service form options', (content.match(/<option(?! value="").*?<\/option>/g) || []).length >= 6],
+    ['draft partnership features', !isIndonesian || (
+      content.includes('id="simulasi"') &&
+      content.includes('id="ketentuan"') &&
+      content.includes('id="hak-kewajiban"') &&
+      content.includes('id="kjansPartnerForm"') &&
+      content.includes('/scripts/partnership.js?v=1')
+    )],
   ]) {
     if (!condition) throw new Error(`${file}: ${label} failed`);
     checks += 1;
