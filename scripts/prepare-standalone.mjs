@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
-const productionOrigin = 'https://amarta-prima-persada.vercel.app';
+const productionOrigin = 'https://asanirwanaselaras.com';
 const sourceOrigin = 'https://pesonaflix.vercel.app/zainulhaq2';
 
 for (const path of ['index.html', 'en/index.html']) {

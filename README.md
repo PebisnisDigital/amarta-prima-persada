@@ -4,7 +4,7 @@ Standalone static website for **Koperasi Jasa Asa Nirwana Selaras**, with the pu
 
 ## Publishing
 
-- The current Vercel project and legacy URL remain `amarta-prima-persada` until a new domain is selected. Keeping this URL ensures existing links continue working during the rebrand.
+- Public domain: `https://asanirwanaselaras.com/`. The Vercel project remains `amarta-prima-persada`, and its original `.vercel.app` address remains available as a fallback.
 - Framework preset **Other**. This is a static site; no build command or `npm install` is needed.
 - Root Directory: repository root (`.`).
 - The main page is `/`, with an English page at `/en`.
@@ -19,8 +19,8 @@ Standalone static website for **Koperasi Jasa Asa Nirwana Selaras**, with the pu
 - Existing unit photos are Toyota examples. Daihatsu and Hiace / Elf Long categories use illustrated cards until the client supplies approved vehicle photos.
 - Validate both languages, service data and WhatsApp URLs with `node scripts/verify.mjs` before deploying.
 - To regenerate the logos from the client PDF if required, render its cover to SVG using Poppler and run `node scripts/extract-kjans-logo.mjs <cover-svg> images`.
-- When the client provides a paid domain, add it in **Vercel Project → Settings → Domains**, then update DNS records at the domain registrar using the values Vercel provides.
-- After connecting the paid domain, update canonical, social sharing, and structured-data URLs in both `index.html` files from `amarta-prima-persada.vercel.app` to the new domain.
+- Custom domain and `www` redirect are configured in **Vercel Project → Settings → Domains**. DNS is managed at Hostinger, with the Vercel-recommended A/CNAME records.
+- Canonical, social sharing, and structured-data URLs in both `index.html` pages use `https://asanirwanaselaras.com/`.
 
 ## Notes
 
