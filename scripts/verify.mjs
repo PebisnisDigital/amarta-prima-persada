@@ -24,6 +24,7 @@ for (const file of files) {
   const familyVehicles = [
     ['Toyota Calya', 'toyota_calya'],
     ['Daihatsu Sigra', 'daihatsu_sigra'],
+    ['Daihatsu Xenia', 'daihatsu_xenia'],
   ];
   const partnershipNames = isIndonesian
     ? ['Titip Mobil', 'Sewa Murni', 'Sewa Kepemilikan']
@@ -53,8 +54,8 @@ for (const file of files) {
     ['no inherited old company contact details', !content.includes('amartaprimapersada.com') && !content.includes('Skyline Building')],
     ['new WhatsApp greeting', !content.includes('Halo%20APP') && !content.includes('Hi%20APP') && !content.includes('%20ANS')],
     ['3 fleet categories', fleetNames.every((name) => content.includes(`<h3>${name}</h3>`))],
-    ['Calya and Sigra in the hero carousel', familyVehicles.every(([name, image]) => content.includes(`data-name="${name}"`) && content.includes(`/images/${image}_kjans.webp`))],
-    ['Calya and Sigra in the fleet cards', familyVehicles.every(([name, image]) => content.includes(`<h3>${name}</h3>`) && content.includes(`/images/${image}_fleet_kjans.webp`))],
+    ['Calya, Sigra and Xenia in the hero carousel', familyVehicles.every(([name, image]) => content.includes(`data-name="${name}"`) && content.includes(`/images/${image}_kjans.webp`))],
+    ['Calya, Sigra and Xenia in the fleet cards', familyVehicles.every(([name, image]) => content.includes(`<h3>${name}</h3>`) && content.includes(`/images/${image}_fleet_kjans.webp`))],
     ['all group vehicles in the hero carousel', groupVehicles.every(([name, image]) => content.includes(`data-name="${name}"`) && content.includes(`/images/${image}_kjans.webp`))],
     ['group fleet section and photo cards', content.includes('id="groupFleetGrid"') && groupVehicles.every(([name, image]) => content.includes(`<h3>${name}</h3>`) && content.includes(`/images/${image}_fleet_kjans.webp`))],
     ['5 transportation services', serviceNames.every((name) => content.includes(`<h3>${name}</h3>`))],
@@ -110,12 +111,12 @@ for (const file of files) {
     }
   }
   checks += 8;
-  for (const name of ['toyota_calya', 'daihatsu_sigra']) {
+  for (const name of ['toyota_calya', 'daihatsu_sigra', 'daihatsu_xenia']) {
     for (const suffix of ['_kjans.webp', '_fleet_kjans.webp']) {
       if (!imageNames.includes(`${name}${suffix}`)) throw new Error(`${file}: missing new family MPV image ${name}${suffix}`);
     }
   }
-  checks += 4;
+  checks += 6;
 }
 
 for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
