@@ -15,6 +15,12 @@ for (const file of files) {
   const content = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
   const isIndonesian = file === 'index.html';
   const fleetNames = ['Toyota 7 Seater', 'Daihatsu 7 Seater', 'Hiace / Elf Long'];
+  const groupVehicles = [
+    ['Isuzu Elf', 'isuzu_elf'],
+    ['Isuzu Elf Long', 'isuzu_elf_long'],
+    ['Toyota Hiace Commuter', 'toyota_hiace_commuter'],
+    ['Toyota Hiace Premio', 'toyota_hiace_premio'],
+  ];
   const partnershipNames = isIndonesian
     ? ['Titip Mobil', 'Sewa Murni', 'Sewa Kepemilikan']
     : ['Car Management (Titip Mobil)', 'New Unit Leasing (Sewa Murni)', 'Lease-to-Own (Sewa Kepemilikan)'];
@@ -43,6 +49,8 @@ for (const file of files) {
     ['no inherited old company contact details', !content.includes('amartaprimapersada.com') && !content.includes('Skyline Building')],
     ['new WhatsApp greeting', !content.includes('Halo%20APP') && !content.includes('Hi%20APP') && !content.includes('%20ANS')],
     ['3 fleet categories', fleetNames.every((name) => content.includes(`<h3>${name}</h3>`))],
+    ['all group vehicles in the hero carousel', groupVehicles.every(([name, image]) => content.includes(`data-name="${name}"`) && content.includes(`/images/${image}_kjans.webp`))],
+    ['group fleet section and photo cards', content.includes('id="groupFleetGrid"') && groupVehicles.every(([name, image]) => content.includes(`<h3>${name}</h3>`) && content.includes(`/images/${image}_fleet_kjans.webp`))],
     ['5 transportation services', serviceNames.every((name) => content.includes(`<h3>${name}</h3>`))],
     ['3 partnership programs', partnershipNames.every((name) => isIndonesian ? content.includes(`<h3>${name}`) : content.includes(`<h3>${name}</h3>`))],
     ['partnership contact', content.includes('asanirwanaselaras@gmail.com') && content.includes('+62 815-184-0631')],
@@ -89,6 +97,13 @@ for (const file of files) {
     if (!sections.has(anchor[1])) throw new Error(`${file}: invalid section link #${anchor[1]}`);
   }
   checks += 2;
+
+  for (const name of ['isuzu_elf', 'isuzu_elf_long', 'toyota_hiace_commuter', 'toyota_hiace_premio']) {
+    for (const suffix of ['_kjans.webp', '_fleet_kjans.webp']) {
+      if (!imageNames.includes(`${name}${suffix}`)) throw new Error(`${file}: missing new fleet image ${name}${suffix}`);
+    }
+  }
+  checks += 8;
 }
 
 for (const name of imageNames.filter((name) => name.endsWith('.webp'))) {
