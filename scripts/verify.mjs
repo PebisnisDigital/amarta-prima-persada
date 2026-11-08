@@ -6,10 +6,34 @@ const imageNames = await readdir(imageDirectory);
 let checks = 0;
 const partnershipCss = await readFile(new URL('../partnership.css', import.meta.url), 'utf8');
 const partnershipJs = await readFile(new URL('./partnership.js', import.meta.url), 'utf8');
+const fleetPricesJs = await readFile(new URL('./fleet-prices.js', import.meta.url), 'utf8');
 if (!partnershipCss.includes('.kjans-sim-shell') || !partnershipJs.includes('https://wa.me/628111004312?text=') || !partnershipJs.includes('encodeURIComponent(text)') || partnershipJs.includes('https://wa.me/628151840631')) {
   throw new Error('Partnership CSS or interactive WhatsApp script is incomplete');
 }
 checks += 3;
+
+for (const [vehicle, expectedAmounts] of [
+  ['Toyota Calya', [375000, 850000, 1300000, 5500000, 12000000, 4500000]],
+  ['Daihatsu Sigra', [375000, 850000, 1300000, 5500000, 12000000, 4500000]],
+  ['Daihatsu Xenia', [500000, 1000000, 1500000, 7500000, 12500000, 6000000]],
+  ['Toyota Avanza', [600000, 1150000, 1700000, 8500000, 15000000, 7000000]],
+  ['Toyota Veloz', [700000, 1350000, 2000000, 9000000, 15500000, 8500000]],
+  ['Innova Zenix G 2.0 Hybrid', [900000, 1650000, 2100000, 14000000, 21000000, 12000000]],
+]) {
+  const group = fleetPricesJs.split(`'${vehicle}': {`)[1]?.split('}')[0];
+  if (!group || expectedAmounts.some((amount) => !group.includes(String(amount)))) {
+    throw new Error(`Vehicle rates mismatch: ${vehicle}`);
+  }
+  checks += 1;
+}
+for (const [vehicle, expectedAmount] of [['Isuzu Elf', 2500000], ['Isuzu Elf Long', 3500000], ['Toyota Hiace Commuter', 3500000]]) {
+  if (!fleetPricesJs.includes(`'${vehicle}': ${expectedAmount}`)) throw new Error(`Minibus rate mismatch: ${vehicle}`);
+  checks += 1;
+}
+if (!fleetPricesJs.includes('currency(2500000)') || !fleetPricesJs.includes('words.vat') || !fleetPricesJs.includes('words.groupNote')) {
+  throw new Error('General Hiace rate or rental conditions are missing');
+}
+checks += 1;
 
 for (const file of files) {
   const content = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
@@ -39,6 +63,8 @@ for (const file of files) {
     ['no PESONAFLIX references', !content.includes('pesonaflix.vercel.app')],
     ['no nested /zainulhaq2 paths', !content.includes('/zainulhaq2')],
     ['local vendor asset', content.includes('/vendor/swiper-bundle.min.js')],
+    ['rental price list script', content.includes('/scripts/fleet-prices.js?v=1')],
+    ['rental price card styling', content.includes('.fleet-pricing-heading') && content.includes('.fleet-price-row')],
     ['Karansa symbol in navigation and body', (content.match(/src="\/images\/karansa-symbol\.webp"/g) || []).length >= 3],
     ['symbol-only ICO and cache-busted favicon', content.includes('rel="icon" type="image/x-icon" href="/favicon.ico?v=2"') && content.includes('rel="icon" type="image/png" sizes="64x64" href="/images/karansa-favicon.png?v=2"')],
     ['updated Apple touch icon', content.includes('rel="apple-touch-icon" sizes="180x180" href="/images/karansa-touch-icon.png?v=2"')],

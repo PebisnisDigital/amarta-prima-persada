@@ -1093,6 +1093,27 @@
       gap: 4px
     }
 
+    .fleet-pricing { margin: 2px 0 20px; border: 1px solid #dfe8ef; border-radius: 13px; background: #f7fafc; overflow: hidden; }
+    .fleet-pricing-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 11px 13px; background: var(--navy-dark); color: #fff; }
+    .fleet-pricing-heading h4 { color: #fff; font-size: 13px; margin: 0; }
+    .fleet-pricing-heading span { color: #f5ca73; font-size: 10px; text-align: right; }
+    .fleet-price-variant { padding: 8px 13px 1px; color: #4e7190; font-size: 11px; font-weight: 700; }
+    .fleet-price-group { padding: 11px 13px; border-top: 1px solid #e4edf2; }
+    .fleet-price-group:first-of-type { border-top: 0; }
+    .fleet-price-group--compact { padding-top: 14px; padding-bottom: 10px; }
+    .fleet-price-title { display: flex; justify-content: space-between; gap: 8px; color: var(--navy-dark); font-size: 12px; font-weight: 800; margin-bottom: 7px; }
+    .fleet-price-title small { color: var(--gray-500); font-size: 10px; font-weight: 600; }
+    .fleet-price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 12px; padding: 3px 0; color: #5c6a78; }
+    .fleet-price-row strong { font-size: 12px; color: var(--navy-dark); white-space: nowrap; text-align: right; }
+    .fleet-price-row .fleet-price-by-agreement { font-size: 11px; font-weight: 600; white-space: normal; max-width: 55%; }
+    .fleet-pricing-footnote { color: #536676; font-size: 11px; line-height: 1.5; padding: 0 13px 13px; margin: 0; }
+    .fleet-pricing-footnote--inquire { padding: 14px 13px; }
+    .fleet-generic-rate { margin: 20px 0 0; padding: 18px 22px; border: 1px solid #d4e3ed; border-left: 4px solid var(--gold); border-radius: 12px; background: #fff; }
+    .fleet-generic-rate h4 { font-size: 15px; margin-bottom: 7px; }
+    .fleet-generic-rate p { color: var(--navy-dark); font-size: 13px; margin: 0 0 5px; line-height: 1.6; }
+    .fleet-generic-rate .fleet-generic-rate-note { color: #617383; font-size: 11px; margin: 0; }
+    .fleet-pricing-disclaimer { color: #5b6a76; font-size: 12px; margin: 18px 0 0; }
+
     .fleet-card .btn-outline {
       margin-top: auto;
       text-align: center
@@ -2912,6 +2933,7 @@
       });
     })();
   </script>
+  <script src="/scripts/fleet-prices.js?v=1" defer></script>
   <script src="/scripts/partnership.js?v=2" defer></script>
 
 </body>
