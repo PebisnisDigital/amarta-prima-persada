@@ -86,7 +86,7 @@ for (const file of files) {
     ['group fleet section and photo cards', content.includes('id="groupFleetGrid"') && groupVehicles.every(([name, image]) => content.includes(`<h3>${name}</h3>`) && content.includes(`/images/${image}_fleet_kjans.webp`))],
     ['5 transportation services', serviceNames.every((name) => content.includes(`<h3>${name}</h3>`))],
     ['3 partnership programs', partnershipNames.every((name) => isIndonesian ? content.includes(`<h3>${name}`) : content.includes(`<h3>${name}</h3>`))],
-    ['partnership contact', content.includes('asanirwanaselaras@gmail.com') && content.includes('+62 815-184-0631')],
+    ['partnership contact', content.includes('asanirwanaselaras@gmail.com') && content.includes('+62 857-2037-6045') && content.includes('tel:+6285720376045') && !content.includes('815-184-0631')],
     ['joining process', (isIndonesian ? content.includes('id="alur"') : content.includes('class="partnership-process"')) && (content.match(/class="process-step"/g) || []).length === 4],
     ['all WhatsApp CTAs use the approved number', content.includes('https://wa.me/628111004312') && !content.includes('wa.me/628151840631')],
     ['no outdated Grab/Gojek offer', !/\bGrab\b|\bGojek\b|minimum 1 year|minimum 1 tahun/i.test(content)],
